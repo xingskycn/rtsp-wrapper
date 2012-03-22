@@ -24,11 +24,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG4_VIDEO_STREAM_DISCRETE_FRAMER_HH
 #define _MPEG4_VIDEO_STREAM_DISCRETE_FRAMER_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MPEG4_VIDEO_STREAM_FRAMER_HH
 #include "MPEG4VideoStreamFramer.hh"
 #endif
 
-class MPEG4VideoStreamDiscreteFramer: public MPEG4VideoStreamFramer {
+class LIVE_API MPEG4VideoStreamDiscreteFramer: public MPEG4VideoStreamFramer {
 public:
   static MPEG4VideoStreamDiscreteFramer*
   createNew(UsageEnvironment& env, FramedSource* inputSource);

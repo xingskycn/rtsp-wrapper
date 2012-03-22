@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _BYTE_STREAM_FILE_SOURCE_HH
 #define _BYTE_STREAM_FILE_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_FILE_SOURCE_HH
 #include "FramedFileSource.hh"
 #endif
 
-class ByteStreamFileSource: public FramedFileSource {
+class LIVE_API ByteStreamFileSource: public FramedFileSource {
 public:
   static ByteStreamFileSource* createNew(UsageEnvironment& env,
 					 char const* fileName,

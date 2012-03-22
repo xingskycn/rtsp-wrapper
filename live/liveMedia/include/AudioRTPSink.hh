@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _AUDIO_RTP_SINK_HH
 #define _AUDIO_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MULTI_FRAMED_RTP_SINK_HH
 #include "MultiFramedRTPSink.hh"
 #endif
 
-class AudioRTPSink: public MultiFramedRTPSink {
+class LIVE_API AudioRTPSink: public MultiFramedRTPSink {
 protected:
   AudioRTPSink(UsageEnvironment& env,
 	       Groupsock* rtpgs, unsigned char rtpPayloadType,

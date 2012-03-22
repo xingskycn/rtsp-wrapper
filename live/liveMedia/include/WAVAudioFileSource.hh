@@ -23,6 +23,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _WAV_AUDIO_FILE_SOURCE_HH
 #define _WAV_AUDIO_FILE_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _AUDIO_INPUT_DEVICE_HH
 #include "AudioInputDevice.hh"
 #endif
@@ -36,7 +39,7 @@ typedef enum {
 } WAV_AUDIO_FORMAT;
 
 
-class WAVAudioFileSource: public AudioInputDevice {
+class LIVE_API WAVAudioFileSource: public AudioInputDevice {
 public:
 
   static WAVAudioFileSource* createNew(UsageEnvironment& env,

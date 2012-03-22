@@ -21,6 +21,10 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MEDIA_HH
 #define _MEDIA_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _LIVEMEDIA_VERSION_HH
 #include "liveMedia_version.hh"
 #endif
@@ -47,7 +51,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 
 #define mediumNameMaxLen 30
 
-class Medium {
+class LIVE_API Medium {
 public:
   static Boolean lookupByName(UsageEnvironment& env,
 			      char const* mediumName,
@@ -117,7 +121,7 @@ private:
 
 
 // The structure pointed to by the "liveMediaPriv" UsageEnvironment field:
-class _Tables {
+class LIVE_API _Tables {
 public:
   static _Tables* getOurTables(UsageEnvironment& env, Boolean createIfNotPresent = True);
       // returns a pointer to an "ourTables" structure (creating it if necessary)

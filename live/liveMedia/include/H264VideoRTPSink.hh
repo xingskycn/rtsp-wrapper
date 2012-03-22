@@ -21,6 +21,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _H264_VIDEO_RTP_SINK_HH
 #define _H264_VIDEO_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _VIDEO_RTP_SINK_HH
 #include "VideoRTPSink.hh"
 #endif
@@ -28,9 +31,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "FramedFilter.hh"
 #endif
 
-class H264FUAFragmenter;
+class LIVE_API H264FUAFragmenter;
 
-class H264VideoRTPSink: public VideoRTPSink {
+class LIVE_API H264VideoRTPSink: public VideoRTPSink {
 public:
   static H264VideoRTPSink* createNew(UsageEnvironment& env, Groupsock* RTPgs, unsigned char rtpPayloadFormat);
   static H264VideoRTPSink* createNew(UsageEnvironment& env, Groupsock* RTPgs, unsigned char rtpPayloadFormat,
@@ -80,7 +83,7 @@ private:
 // class, rather than in "H264VideoRTPSink".
 // (Note: This class should be used only by "H264VideoRTPSink", or a subclass.)
 
-class H264FUAFragmenter: public FramedFilter {
+class LIVE_API H264FUAFragmenter: public FramedFilter {
 public:
   H264FUAFragmenter(UsageEnvironment& env, FramedSource* inputSource,
 		    unsigned inputBufferMax, unsigned maxOutputPacketSize);

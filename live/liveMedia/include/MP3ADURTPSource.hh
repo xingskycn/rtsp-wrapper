@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MP3_ADU_SOURCE_HH
 #define _MP3_ADU_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MULTI_FRAMED_RTP_SOURCE_HH
 #include "MultiFramedRTPSource.hh"
 #endif
 
-class MP3ADURTPSource: public MultiFramedRTPSource {
+class LIVE_API MP3ADURTPSource: public MultiFramedRTPSource {
 public:
   static MP3ADURTPSource*
   createNew(UsageEnvironment& env, Groupsock* RTPgs,

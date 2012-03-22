@@ -95,6 +95,27 @@
     <ClCompile Include="groupsock\IOHandlers.cpp" />
     <ClCompile Include="groupsock\NetAddress.cpp" />
     <ClCompile Include="groupsock\NetInterface.cpp" />
+    <ClCompile Include="liveMedia\AACAudioMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\AC3AudioMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\DVVideoRTPSource.cpp" />
+    <ClCompile Include="liveMedia\EBMLNumber.cpp" />
+    <ClCompile Include="liveMedia\H264VideoFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\H264VideoMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\H264VideoStreamDiscreteFramer.cpp" />
+    <ClCompile Include="liveMedia\MatroskaDemuxedTrack.cpp" />
+    <ClCompile Include="liveMedia\MatroskaFile.cpp" />
+    <ClCompile Include="liveMedia\MatroskaFileParser.cpp" />
+    <ClCompile Include="liveMedia\MatroskaFileServerDemux.cpp" />
+    <ClCompile Include="liveMedia\MP3AudioMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\T140TextMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\T140TextRTPSink.cpp" />
+    <ClCompile Include="liveMedia\TextRTPSink.cpp" />
+    <ClCompile Include="liveMedia\VorbisAudioMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\VorbisAudioRTPSink.cpp" />
+    <ClCompile Include="liveMedia\VorbisAudioRTPSource.cpp" />
+    <ClCompile Include="liveMedia\VP8VideoMatroskaFileServerMediaSubsession.cpp" />
+    <ClCompile Include="liveMedia\VP8VideoRTPSink.cpp" />
+    <ClCompile Include="liveMedia\VP8VideoRTPSource.cpp" />
     <ClCompile Include="UsageEnvironment\HashTable.cpp" />
     <ClCompile Include="UsageEnvironment\strDup.cpp" />
     <ClCompile Include="UsageEnvironment\UsageEnvironment.cpp" />
@@ -137,7 +158,6 @@
     <ClCompile Include="liveMedia\H264VideoRTPSink.cpp" />
     <ClCompile Include="liveMedia\H264VideoRTPSource.cpp" />
     <ClCompile Include="liveMedia\H264VideoStreamFramer.cpp" />
-    <ClCompile Include="liveMedia\HTTPSink.cpp" />
     <ClCompile Include="liveMedia\InputFile.cpp" />
     <ClCompile Include="liveMedia\JPEGVideoRTPSink.cpp" />
     <ClCompile Include="liveMedia\JPEGVideoRTPSource.cpp" />
@@ -169,7 +189,6 @@
     <ClCompile Include="liveMedia\MPEG1or2DemuxedServerMediaSubsession.cpp" />
     <ClCompile Include="liveMedia\MPEG1or2FileServerDemux.cpp" />
     <ClCompile Include="liveMedia\MPEG1or2VideoFileServerMediaSubsession.cpp" />
-    <ClCompile Include="liveMedia\MPEG1or2VideoHTTPSink.cpp" />
     <ClCompile Include="liveMedia\MPEG1or2VideoRTPSink.cpp" />
     <ClCompile Include="liveMedia\MPEG1or2VideoRTPSource.cpp" />
     <ClCompile Include="liveMedia\MPEG1or2VideoStreamDiscreteFramer.cpp" />
@@ -210,7 +229,6 @@
     <ClCompile Include="liveMedia\RTPSource.cpp" />
     <ClCompile Include="liveMedia\RTSPClient.cpp" />
     <ClCompile Include="liveMedia\RTSPCommon.cpp" />
-    <ClCompile Include="liveMedia\RTSPOverHTTPServer.cpp" />
     <ClCompile Include="liveMedia\RTSPServer.cpp" />
     <ClCompile Include="liveMedia\ServerMediaSession.cpp" />
     <ClCompile Include="liveMedia\SimpleRTPSink.cpp" />
@@ -227,7 +245,6 @@
     <ClCompile Include="BasicUsageEnvironment\BasicUsageEnvironment.cpp" />
     <ClCompile Include="BasicUsageEnvironment\BasicUsageEnvironment0.cpp" />
     <ClCompile Include="BasicUsageEnvironment\DelayQueue.cpp" />
-    <ClCompile Include="BasicUsageEnvironment\PollingBasedTaskScheduler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

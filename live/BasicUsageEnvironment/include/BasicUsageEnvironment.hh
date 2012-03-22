@@ -20,11 +20,15 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _BASIC_USAGE_ENVIRONMENT_HH
 #define _BASIC_USAGE_ENVIRONMENT_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _BASIC_USAGE_ENVIRONMENT0_HH
 #include "BasicUsageEnvironment0.hh"
 #endif
 
-class BasicUsageEnvironment: public BasicUsageEnvironment0 {
+class LIVE_API BasicUsageEnvironment: public BasicUsageEnvironment0 {
 public:
   static BasicUsageEnvironment* createNew(TaskScheduler& taskScheduler);
 
@@ -44,7 +48,7 @@ protected:
 };
 
 
-class BasicTaskScheduler: public BasicTaskScheduler0 {
+class LIVE_API BasicTaskScheduler: public BasicTaskScheduler0 {
 public:
   static BasicTaskScheduler* createNew();
   virtual ~BasicTaskScheduler();

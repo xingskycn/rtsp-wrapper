@@ -23,6 +23,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG2_TRANSPORT_STREAM_TRICK_MODE_FILTER_HH
 #define _MPEG2_TRANSPORT_STREAM_TRICK_MODE_FILTER_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_FILTER_HH
 #include "FramedFilter.hh"
 #endif
@@ -35,7 +38,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #define TRANSPORT_PACKET_SIZE 188
 #endif
 
-class MPEG2TransportStreamTrickModeFilter: public FramedFilter {
+class LIVE_API MPEG2TransportStreamTrickModeFilter: public FramedFilter {
 public:
   static MPEG2TransportStreamTrickModeFilter*
   createNew(UsageEnvironment& env, FramedSource* inputSource,

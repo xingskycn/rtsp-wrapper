@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _FILE_SINK_HH
 #define _FILE_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MEDIA_SINK_HH
 #include "MediaSink.hh"
 #endif
 
-class FileSink: public MediaSink {
+class LIVE_API FileSink: public MediaSink {
 public:
   static FileSink* createNew(UsageEnvironment& env, char const* fileName,
 			     unsigned bufferSize = 20000,

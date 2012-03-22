@@ -20,6 +20,10 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _BASIC_USAGE_ENVIRONMENT0_HH
 #define _BASIC_USAGE_ENVIRONMENT0_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _BASICUSAGEENVIRONMENT_VERSION_HH
 #include "BasicUsageEnvironment_version.hh"
 #endif
@@ -36,7 +40,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 
 // An abstract base class, useful for subclassing
 // (e.g., to redefine the implementation of "operator<<")
-class BasicUsageEnvironment0: public UsageEnvironment {
+class LIVE_API BasicUsageEnvironment0: public UsageEnvironment {
 public:
   // redefined virtual functions:
   virtual MsgString getResultMsg() const;
@@ -65,13 +69,13 @@ private:
   unsigned fBufferMaxSize;
 };
 
-class HandlerSet; // forward
+class LIVE_API HandlerSet; // forward
 
 #define MAX_NUM_EVENT_TRIGGERS 32
 
 // An abstract base class, useful for subclassing
 // (e.g., to redefine the implementation of socket event handling)
-class BasicTaskScheduler0: public TaskScheduler {
+class LIVE_API BasicTaskScheduler0: public TaskScheduler {
 public:
   virtual ~BasicTaskScheduler0();
 

@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _H263_PLUS_VIDEO_RTP_SINK_HH
 #define _H263_PLUS_VIDEO_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _VIDEO_RTP_SINK_HH
 #include "VideoRTPSink.hh"
 #endif
 
-class H263plusVideoRTPSink: public VideoRTPSink {
+class LIVE_API H263plusVideoRTPSink: public VideoRTPSink {
 public:
   static H263plusVideoRTPSink* createNew(UsageEnvironment& env, Groupsock* RTPgs,
 					 unsigned char rtpPayloadFormat,

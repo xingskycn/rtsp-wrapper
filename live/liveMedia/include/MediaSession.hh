@@ -46,6 +46,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MEDIA_SESSION_HH
 #define _MEDIA_SESSION_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _RTCP_HH
 #include "RTCP.hh"
 #endif
@@ -53,9 +56,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "FramedFilter.hh"
 #endif
 
-class MediaSubsession; // forward
+class LIVE_API MediaSubsession; // forward
 
-class MediaSession: public Medium {
+class LIVE_API MediaSession: public Medium {
 public:
   static MediaSession* createNew(UsageEnvironment& env,
 				 char const* sdpDescription);
@@ -128,7 +131,7 @@ protected:
 };
 
 
-class MediaSubsessionIterator {
+class LIVE_API MediaSubsessionIterator {
 public:
   MediaSubsessionIterator(MediaSession& session);
   virtual ~MediaSubsessionIterator();
@@ -142,7 +145,7 @@ private:
 };
 
 
-class MediaSubsession {
+class LIVE_API MediaSubsession {
 public:
   MediaSession& parentSession() { return fParent; }
   MediaSession const& parentSession() const { return fParent; }

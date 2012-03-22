@@ -21,13 +21,16 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG_1OR2_DEMUX_HH
 #define _MPEG_1OR2_DEMUX_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_SOURCE_HH
 #include "FramedSource.hh"
 #endif
 
-class MPEG1or2DemuxedElementaryStream; // forward
+class LIVE_API MPEG1or2DemuxedElementaryStream; // forward
 
-class MPEG1or2Demux: public Medium {
+class LIVE_API MPEG1or2Demux: public Medium {
 public:
   static MPEG1or2Demux* createNew(UsageEnvironment& env,
 				  FramedSource* inputSource,
@@ -63,7 +66,7 @@ public:
 
   FramedSource* inputSource() const { return fInputSource; }
 
-  class SCR {
+  class LIVE_API SCR {
   public:
     SCR();
 

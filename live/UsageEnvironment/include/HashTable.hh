@@ -20,11 +20,15 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _HASH_TABLE_HH
 #define _HASH_TABLE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _BOOLEAN_HH
 #include "Boolean.hh"
 #endif
 
-class HashTable {
+class LIVE_API HashTable {
     public:
 	virtual ~HashTable();
 

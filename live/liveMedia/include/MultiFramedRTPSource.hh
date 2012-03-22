@@ -22,14 +22,17 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MULTI_FRAMED_RTP_SOURCE_HH
 #define _MULTI_FRAMED_RTP_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _RTP_SOURCE_HH
 #include "RTPSource.hh"
 #endif
 
-class BufferedPacket; // forward
-class BufferedPacketFactory; // forward
+class LIVE_API BufferedPacket; // forward
+class LIVE_API BufferedPacketFactory; // forward
 
-class MultiFramedRTPSource: public RTPSource {
+class LIVE_API MultiFramedRTPSource: public RTPSource {
 protected:
   MultiFramedRTPSource(UsageEnvironment& env, Groupsock* RTPgs,
 		       unsigned char rtpPayloadFormat,
@@ -83,7 +86,7 @@ private:
 // Note that this can be subclassed - if desired - to redefine
 // "nextEnclosedFrameSize()".
 
-class BufferedPacket {
+class LIVE_API BufferedPacket {
 public:
   BufferedPacket();
   virtual ~BufferedPacket();
@@ -147,7 +150,7 @@ private:
 // If you want to subclass "BufferedPacket", then you'll also
 // want to subclass this, to redefine createNewPacket()
 
-class BufferedPacketFactory {
+class LIVE_API BufferedPacketFactory {
 public:
   BufferedPacketFactory();
   virtual ~BufferedPacketFactory();

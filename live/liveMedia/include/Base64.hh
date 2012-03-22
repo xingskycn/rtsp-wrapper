@@ -21,16 +21,20 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _BASE64_HH
 #define _BASE64_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _BOOLEAN_HH
 #include "Boolean.hh"
 #endif
 
-unsigned char* base64Decode(char const* in, unsigned& resultSize,
+LIVE_API unsigned char* base64Decode(char const* in, unsigned& resultSize,
 			    Boolean trimTrailingZeros = True);
     // returns a newly allocated array - of size "resultSize" - that
     // the caller is responsible for delete[]ing.
 
-char* base64Encode(char const* orig, unsigned origLength);
+LIVE_API char* base64Encode(char const* orig, unsigned origLength);
     // returns a 0-terminated string that
     // the caller is responsible for delete[]ing.
 

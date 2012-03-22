@@ -21,6 +21,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _BASIC_UDP_SOURCE_HH
 #define _BASIC_UDP_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_SOURCE_HH
 #include "FramedSource.hh"
 #endif
@@ -28,7 +31,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "Groupsock.hh"
 #endif
 
-class BasicUDPSource: public FramedSource {
+class LIVE_API BasicUDPSource: public FramedSource {
 public:
   static BasicUDPSource* createNew(UsageEnvironment& env, Groupsock* inputGS);
 

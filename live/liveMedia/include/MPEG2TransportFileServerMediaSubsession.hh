@@ -22,6 +22,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG2_TRANSPORT_FILE_SERVER_MEDIA_SUBSESSION_HH
 #define _MPEG2_TRANSPORT_FILE_SERVER_MEDIA_SUBSESSION_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FILE_SERVER_MEDIA_SUBSESSION_HH
 #include "FileServerMediaSubsession.hh"
 #endif
@@ -38,9 +41,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "MPEG2TransportStreamFromESSource.hh"
 #endif
 
-class ClientTrickPlayState; // forward
+class LIVE_API ClientTrickPlayState; // forward
 
-class MPEG2TransportFileServerMediaSubsession: public FileServerMediaSubsession{
+class LIVE_API MPEG2TransportFileServerMediaSubsession: public FileServerMediaSubsession{
 public:
   static MPEG2TransportFileServerMediaSubsession*
   createNew(UsageEnvironment& env,

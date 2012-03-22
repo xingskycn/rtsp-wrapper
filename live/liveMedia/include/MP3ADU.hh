@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MP3_ADU_HH
 #define _MP3_ADU_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_FILTER_HH
 #include "FramedFilter.hh"
 #endif
 
-class ADUFromMP3Source: public FramedFilter {
+class LIVE_API ADUFromMP3Source: public FramedFilter {
 public:
   static ADUFromMP3Source* createNew(UsageEnvironment& env,
 				     FramedSource* inputSource,
@@ -63,7 +66,7 @@ private:
   unsigned fFrameCounter;
 };
 
-class MP3FromADUSource: public FramedFilter {
+class LIVE_API MP3FromADUSource: public FramedFilter {
 public:
   static MP3FromADUSource* createNew(UsageEnvironment& env,
 				     FramedSource* inputSource,

@@ -21,6 +21,10 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _NET_ADDRESS_HH
 #define _NET_ADDRESS_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _HASH_TABLE_HH
 #include "HashTable.hh"
 #endif
@@ -38,7 +42,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 // to allow for IPv6.
 typedef u_int32_t netAddressBits;
 
-class NetAddress {
+class LIVE_API NetAddress {
     public:
 	NetAddress(u_int8_t const* data,
 		   unsigned length = 4 /* default: 32 bits */);
@@ -59,7 +63,7 @@ class NetAddress {
 	u_int8_t* fData;
 };
 
-class NetAddressList {
+class LIVE_API NetAddressList {
     public:
 	NetAddressList(char const* hostname);
 	NetAddressList(NetAddressList const& orig);
@@ -91,7 +95,7 @@ class NetAddressList {
 
 typedef u_int16_t portNumBits;
 
-class Port {
+class LIVE_API Port {
     public:
 	Port(portNumBits num /* in host byte order */);
 
@@ -105,11 +109,11 @@ class Port {
 #endif
 };
 
-UsageEnvironment& operator<<(UsageEnvironment& s, const Port& p);
+LIVE_API UsageEnvironment& operator<<(UsageEnvironment& s, const Port& p);
 
 
 // A generic table for looking up objects by (address1, address2, port)
-class AddressPortLookupTable {
+class LIVE_API AddressPortLookupTable {
     public:
 	AddressPortLookupTable();
 	virtual ~AddressPortLookupTable();
@@ -141,7 +145,7 @@ class AddressPortLookupTable {
 };
 
 
-Boolean IsMulticastAddress(netAddressBits address);
+LIVE_API Boolean IsMulticastAddress(netAddressBits address);
 
 
 // A mechanism for displaying an IPv4 address in ASCII.  This is intended to replace "inet_ntoa()", which is not thread-safe.

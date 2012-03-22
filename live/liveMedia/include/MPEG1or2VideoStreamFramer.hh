@@ -22,11 +22,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG_1OR2_VIDEO_STREAM_FRAMER_HH
 #define _MPEG_1OR2_VIDEO_STREAM_FRAMER_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MPEG_VIDEO_STREAM_FRAMER_HH
 #include "MPEGVideoStreamFramer.hh"
 #endif
 
-class MPEG1or2VideoStreamFramer: public MPEGVideoStreamFramer {
+class LIVE_API MPEG1or2VideoStreamFramer: public MPEGVideoStreamFramer {
 public:
   static MPEG1or2VideoStreamFramer*
       createNew(UsageEnvironment& env, FramedSource* inputSource,

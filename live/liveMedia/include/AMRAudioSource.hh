@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _AMR_AUDIO_SOURCE_HH
 #define _AMR_AUDIO_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_SOURCE_HH
 #include "FramedSource.hh"
 #endif
 
-class AMRAudioSource: public FramedSource {
+class LIVE_API AMRAudioSource: public FramedSource {
 public:
   Boolean isWideband() const { return fIsWideband; }
   unsigned numChannels() const { return fNumChannels; }

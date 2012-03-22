@@ -21,13 +21,16 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MP3_FILE_SOURCE_HH
 #define _MP3_FILE_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_FILE_SOURCE_HH
 #include "FramedFileSource.hh"
 #endif
 
-class MP3StreamState; // forward
+class LIVE_API MP3StreamState; // forward
 
-class MP3FileSource: public FramedFileSource {
+class LIVE_API MP3FileSource: public FramedFileSource {
 public:
   static MP3FileSource* createNew(UsageEnvironment& env, char const* fileName);
 

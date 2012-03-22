@@ -23,6 +23,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _RTP_INTERFACE_HH
 #define _RTP_INTERFACE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MEDIA_HH
 #include <Media.hh>
 #endif
@@ -40,7 +43,7 @@ typedef void ServerRequestAlternativeByteHandler(void* instance, u_int8_t reques
 // the same TCP connection.  A RTSP server implementation would supply a function like this - as a parameter to
 // "ServerMediaSubsession::startStream()".
 
-class tcpStreamRecord {
+class LIVE_API tcpStreamRecord {
 public:
   tcpStreamRecord(int streamSocketNum, unsigned char streamChannelId,
 		  tcpStreamRecord* next);
@@ -52,7 +55,7 @@ public:
   unsigned char fStreamChannelId;
 };
 
-class RTPInterface {
+class LIVE_API RTPInterface {
 public:
   RTPInterface(Medium* owner, Groupsock* gs);
   virtual ~RTPInterface();

@@ -24,9 +24,13 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "Boolean.hh"
 #endif
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 ////////// HandlerSet (etc.) definition //////////
 
-class HandlerDescriptor {
+class LIVE_API HandlerDescriptor {
   HandlerDescriptor(HandlerDescriptor* nextHandler);
   virtual ~HandlerDescriptor();
 
@@ -44,7 +48,7 @@ private:
   HandlerDescriptor* fPrevHandler;
 };
 
-class HandlerSet {
+class LIVE_API HandlerSet {
 public:
   HandlerSet();
   virtual ~HandlerSet();
@@ -61,7 +65,7 @@ private:
   HandlerDescriptor fHandlers;
 };
 
-class HandlerIterator {
+class LIVE_API HandlerIterator {
 public:
   HandlerIterator(HandlerSet& handlerSet);
   virtual ~HandlerIterator();

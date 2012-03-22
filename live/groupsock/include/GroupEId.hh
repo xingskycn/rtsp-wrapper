@@ -21,6 +21,10 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _GROUPEID_HH
 #define _GROUPEID_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _BOOLEAN_HH
 #include "Boolean.hh"
 #endif
@@ -31,7 +35,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 
 const u_int8_t MAX_TTL = 255;
 
-class Scope {
+class LIVE_API Scope {
     public:
     	Scope(u_int8_t ttl = 0, const char* publicKey = NULL);
     	Scope(const Scope& orig);
@@ -53,7 +57,7 @@ class Scope {
     	char* fPublicKey;
 };
 
-class GroupEId {
+class LIVE_API GroupEId {
 public:
   GroupEId(struct in_addr const& groupAddr,
 	   portNumBits portNum, Scope const& scope,

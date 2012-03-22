@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG4_GENERIC_RTP_SINK_HH
 #define _MPEG4_GENERIC_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MULTI_FRAMED_RTP_SINK_HH
 #include "MultiFramedRTPSink.hh"
 #endif
 
-class MPEG4GenericRTPSink: public MultiFramedRTPSink {
+class LIVE_API MPEG4GenericRTPSink: public MultiFramedRTPSink {
 public:
   static MPEG4GenericRTPSink*
   createNew(UsageEnvironment& env, Groupsock* RTPgs,

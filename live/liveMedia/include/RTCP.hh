@@ -21,6 +21,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _RTCP_HH
 #define _RTCP_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _RTP_SINK_HH
 #include "RTPSink.hh"
 #endif
@@ -28,7 +31,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "RTPSource.hh"
 #endif
 
-class SDESItem {
+class LIVE_API SDESItem {
 public:
   SDESItem(unsigned char tag, unsigned char const* value);
 
@@ -39,9 +42,9 @@ private:
   unsigned char fData[2 + 0xFF]; // first 2 bytes are tag and length
 };
 
-class RTCPMemberDatabase; // forward
+class LIVE_API RTCPMemberDatabase; // forward
 
-class RTCPInstance: public Medium {
+class LIVE_API RTCPInstance: public Medium {
 public:
   static RTCPInstance* createNew(UsageEnvironment& env, Groupsock* RTCPgs,
 				 unsigned totSessionBW, /* in kbps */

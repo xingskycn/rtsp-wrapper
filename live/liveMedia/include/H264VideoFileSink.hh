@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _H264_VIDEO_FILE_SINK_HH
 #define _H264_VIDEO_FILE_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FILE_SINK_HH
 #include "FileSink.hh"
 #endif
 
-class H264VideoFileSink: public FileSink {
+class LIVE_API H264VideoFileSink: public FileSink {
 public:
   static H264VideoFileSink* createNew(UsageEnvironment& env, char const* fileName,
 				      char const* sPropParameterSetsStr = NULL,

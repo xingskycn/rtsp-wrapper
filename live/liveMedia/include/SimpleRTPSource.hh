@@ -25,11 +25,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _SIMPLE_RTP_SOURCE_HH
 #define _SIMPLE_RTP_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MULTI_FRAMED_RTP_SOURCE_HH
 #include "MultiFramedRTPSource.hh"
 #endif
 
-class SimpleRTPSource: public MultiFramedRTPSource {
+class LIVE_API SimpleRTPSource: public MultiFramedRTPSource {
 public:
   static SimpleRTPSource* createNew(UsageEnvironment& env, Groupsock* RTPgs,
 				    unsigned char rtpPayloadFormat,

@@ -21,6 +21,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _RTP_SOURCE_HH
 #define _RTP_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_SOURCE_HH
 #include "FramedSource.hh"
 #endif
@@ -28,9 +31,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "RTPInterface.hh"
 #endif
 
-class RTPReceptionStatsDB; // forward
+class LIVE_API RTPReceptionStatsDB; // forward
 
-class RTPSource: public FramedSource {
+class LIVE_API RTPSource: public FramedSource {
 public:
   static Boolean lookupByName(UsageEnvironment& env, char const* sourceName,
 			      RTPSource*& resultSource);
@@ -107,9 +110,9 @@ private:
 };
 
 
-class RTPReceptionStats; // forward
+class LIVE_API RTPReceptionStats; // forward
 
-class RTPReceptionStatsDB {
+class LIVE_API RTPReceptionStatsDB {
 public:
   unsigned totNumPacketsReceived() const { return fTotNumPacketsReceived; }
   unsigned numActiveSourcesSinceLastReset() const {
@@ -168,7 +171,7 @@ private:
   unsigned fTotNumPacketsReceived; // for all SSRCs
 };
 
-class RTPReceptionStats {
+class LIVE_API RTPReceptionStats {
 public:
   u_int32_t SSRC() const { return fSSRC; }
   unsigned numPacketsReceivedSinceLastReset() const {

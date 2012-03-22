@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _VIDEO_RTP_SINK_HH
 #define _VIDEO_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MULTI_FRAMED_RTP_SINK_HH
 #include "MultiFramedRTPSink.hh"
 #endif
 
-class VideoRTPSink: public MultiFramedRTPSink {
+class LIVE_API VideoRTPSink: public MultiFramedRTPSink {
 protected:
   VideoRTPSink(UsageEnvironment& env,
 	       Groupsock* rtpgs, unsigned char rtpPayloadType,

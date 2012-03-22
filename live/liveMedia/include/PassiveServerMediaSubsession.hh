@@ -22,6 +22,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _PASSIVE_SERVER_MEDIA_SUBSESSION_HH
 #define _PASSIVE_SERVER_MEDIA_SUBSESSION_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _SERVER_MEDIA_SESSION_HH
 #include "ServerMediaSession.hh"
 #endif
@@ -33,7 +36,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "RTCP.hh"
 #endif
 
-class PassiveServerMediaSubsession: public ServerMediaSubsession {
+class LIVE_API PassiveServerMediaSubsession: public ServerMediaSubsession {
 public:
   static PassiveServerMediaSubsession* createNew(RTPSink& rtpSink,
 						 RTCPInstance* rtcpInstance = NULL);

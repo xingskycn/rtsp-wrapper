@@ -162,9 +162,6 @@
     <ClCompile Include="liveMedia\H264VideoStreamFramer.cpp">
       <Filter>liveMedia</Filter>
     </ClCompile>
-    <ClCompile Include="liveMedia\HTTPSink.cpp">
-      <Filter>liveMedia</Filter>
-    </ClCompile>
     <ClCompile Include="liveMedia\InputFile.cpp">
       <Filter>liveMedia</Filter>
     </ClCompile>
@@ -256,9 +253,6 @@
       <Filter>liveMedia</Filter>
     </ClCompile>
     <ClCompile Include="liveMedia\MPEG1or2VideoFileServerMediaSubsession.cpp">
-      <Filter>liveMedia</Filter>
-    </ClCompile>
-    <ClCompile Include="liveMedia\MPEG1or2VideoHTTPSink.cpp">
       <Filter>liveMedia</Filter>
     </ClCompile>
     <ClCompile Include="liveMedia\MPEG1or2VideoRTPSink.cpp">
@@ -381,9 +375,6 @@
     <ClCompile Include="liveMedia\RTSPCommon.cpp">
       <Filter>liveMedia</Filter>
     </ClCompile>
-    <ClCompile Include="liveMedia\RTSPOverHTTPServer.cpp">
-      <Filter>liveMedia</Filter>
-    </ClCompile>
     <ClCompile Include="liveMedia\RTSPServer.cpp">
       <Filter>liveMedia</Filter>
     </ClCompile>
@@ -432,8 +423,68 @@
     <ClCompile Include="BasicUsageEnvironment\DelayQueue.cpp">
       <Filter>BasicUsageEnvironment</Filter>
     </ClCompile>
-    <ClCompile Include="BasicUsageEnvironment\PollingBasedTaskScheduler.cpp">
-      <Filter>BasicUsageEnvironment</Filter>
+    <ClCompile Include="liveMedia\DVVideoRTPSource.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\VorbisAudioRTPSource.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\VP8VideoMatroskaFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\MatroskaDemuxedTrack.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\MatroskaFile.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\MatroskaFileServerDemux.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\VP8VideoRTPSink.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\VP8VideoRTPSource.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\AC3AudioMatroskaFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\H264VideoMatroskaFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\MatroskaFileParser.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\T140TextMatroskaFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\VorbisAudioMatroskaFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\EBMLNumber.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\H264VideoFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\H264VideoStreamDiscreteFramer.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\AACAudioMatroskaFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\MP3AudioMatroskaFileServerMediaSubsession.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\T140TextRTPSink.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\VorbisAudioRTPSink.cpp">
+      <Filter>liveMedia</Filter>
+    </ClCompile>
+    <ClCompile Include="liveMedia\TextRTPSink.cpp">
+      <Filter>liveMedia</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -21,6 +21,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MP3_HTTP_SOURCE_HH
 #define _MP3_HTTP_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MP3_FILE_SOURCE_HH
 #include "MP3FileSource.hh"
 #endif
@@ -28,7 +31,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "NetAddress.hh"
 #endif
 
-class MP3HTTPSource: public MP3FileSource {
+class LIVE_API MP3HTTPSource: public MP3FileSource {
 public:
   static MP3HTTPSource* createNew(UsageEnvironment& env,
 				  NetAddress const& address, Port port,

@@ -21,6 +21,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG2_IFRAME_INDEX_FROM_TRANSPORT_STREAM_HH
 #define _MPEG2_IFRAME_INDEX_FROM_TRANSPORT_STREAM_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_FILTER_HH
 #include "FramedFilter.hh"
 #endif
@@ -33,9 +36,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #define MAX_PES_PACKET_SIZE 65536
 #endif
 
-class IndexRecord; // forward
+class LIVE_API IndexRecord; // forward
 
-class MPEG2IFrameIndexFromTransportStream: public FramedFilter {
+class LIVE_API MPEG2IFrameIndexFromTransportStream: public FramedFilter {
 public:
   static MPEG2IFrameIndexFromTransportStream*
   createNew(UsageEnvironment& env, FramedSource* inputSource);

@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MP3_ADU_RTP_SINK_HH
 #define _MP3_ADU_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _AUDIO_RTP_SINK_HH
 #include "AudioRTPSink.hh"
 #endif
 
-class MP3ADURTPSink: public AudioRTPSink {
+class LIVE_API MP3ADURTPSink: public AudioRTPSink {
 public:
   static MP3ADURTPSink* createNew(UsageEnvironment& env, Groupsock* RTPgs,
 				  unsigned char RTPPayloadType);

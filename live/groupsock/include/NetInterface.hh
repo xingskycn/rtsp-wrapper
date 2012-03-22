@@ -21,11 +21,15 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _NET_INTERFACE_HH
 #define _NET_INTERFACE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _NET_ADDRESS_HH
 #include "NetAddress.hh"
 #endif
 
-class NetInterface {
+class LIVE_API NetInterface {
 public:
   virtual ~NetInterface();
 
@@ -36,7 +40,7 @@ protected:
   NetInterface(); // virtual base class
 };
 
-class DirectedNetInterface: public NetInterface {
+class LIVE_API DirectedNetInterface: public NetInterface {
 public:
   virtual ~DirectedNetInterface();
 
@@ -49,7 +53,7 @@ protected:
   DirectedNetInterface(); // virtual base class
 };
 
-class DirectedNetInterfaceSet {
+class LIVE_API DirectedNetInterfaceSet {
 public:
   DirectedNetInterfaceSet();
   virtual ~DirectedNetInterfaceSet();
@@ -77,7 +81,7 @@ private:
   HashTable* fTable;
 };
 
-class Socket: public NetInterface {
+class LIVE_API Socket: public NetInterface {
 public:
   virtual ~Socket();
 
@@ -107,11 +111,11 @@ private:
   Port fPort;
 };
 
-UsageEnvironment& operator<<(UsageEnvironment& s, const Socket& sock);
+LIVE_API UsageEnvironment& operator<<(UsageEnvironment& s, const Socket& sock);
 
 // A data structure for looking up a Socket by port:
 
-class SocketLookupTable {
+class LIVE_API SocketLookupTable {
 public:
   virtual ~SocketLookupTable();
 
@@ -129,7 +133,7 @@ private:
 
 // A data structure for counting traffic:
 
-class NetInterfaceTrafficStats {
+class LIVE_API NetInterfaceTrafficStats {
 public:
   NetInterfaceTrafficStats();
 

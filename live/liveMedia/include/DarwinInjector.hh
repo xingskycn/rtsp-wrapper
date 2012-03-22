@@ -23,10 +23,12 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _DARWIN_INJECTOR_HH
 #define _DARWIN_INJECTOR_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _RTSP_CLIENT_HH
 #include <RTSPClient.hh>
 #endif
-
 #ifndef _RTCP_HH
 #include <RTCP.hh>
 #endif
@@ -52,9 +54,9 @@ To use a "DarwinInjector":
   4/ Call "startPlaying" on each RTP sink (from the corresponding 'source').
 */
 
-class SubstreamDescriptor; // forward
+class LIVE_API SubstreamDescriptor; // forward
 
-class DarwinInjector: public Medium {
+class LIVE_API DarwinInjector: public Medium {
 public:
   static DarwinInjector* createNew(UsageEnvironment& env,
 				   char const* applicationName = "DarwinInjector",

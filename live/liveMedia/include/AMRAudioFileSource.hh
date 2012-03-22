@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _AMR_AUDIO_FILE_SOURCE_HH
 #define _AMR_AUDIO_FILE_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _AMR_AUDIO_SOURCE_HH
 #include "AMRAudioSource.hh"
 #endif
 
-class AMRAudioFileSource: public AMRAudioSource {
+class LIVE_API AMRAudioFileSource: public AMRAudioSource {
 public:
   static AMRAudioFileSource* createNew(UsageEnvironment& env,
 				       char const* fileName);

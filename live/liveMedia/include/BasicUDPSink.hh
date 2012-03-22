@@ -21,6 +21,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _BASIC_UDP_SINK_HH
 #define _BASIC_UDP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MEDIA_SINK_HH
 #include "MediaSink.hh"
 #endif
@@ -28,7 +31,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include <Groupsock.hh>
 #endif
 
-class BasicUDPSink: public MediaSink {
+class LIVE_API BasicUDPSink: public MediaSink {
 public:
   static BasicUDPSink* createNew(UsageEnvironment& env, Groupsock* gs,
 				  unsigned maxPayloadSize = 1450);

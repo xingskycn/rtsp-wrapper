@@ -21,13 +21,17 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _TUNNEL_ENCAPS_HH
 #define _TUNNEL_ENCAPS_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _NET_ADDRESS_HH
 #include "NetAddress.hh"
 #endif
 
 typedef u_int16_t Cookie;
 
-class TunnelEncapsulationTrailer {
+class LIVE_API TunnelEncapsulationTrailer {
 	// The trailer is layed out as follows:
 	// bytes 0-1:	source 'cookie'
 	// bytes 2-3:	destination 'cookie'
@@ -62,39 +66,39 @@ class TunnelEncapsulationTrailer {
 		{ return ((char*)this) + charIndex; }
 };
 
-const unsigned TunnelEncapsulationTrailerSize = 12; // bytes
-const unsigned TunnelEncapsulationTrailerAuxSize = 4; // bytes
-const unsigned TunnelEncapsulationTrailerMaxSize
+LIVE_API const unsigned TunnelEncapsulationTrailerSize = 12; // bytes
+LIVE_API const unsigned TunnelEncapsulationTrailerAuxSize = 4; // bytes
+LIVE_API const unsigned TunnelEncapsulationTrailerMaxSize
     = TunnelEncapsulationTrailerSize + TunnelEncapsulationTrailerAuxSize;
 
 // Command codes:
 // 0: unused
-const u_int8_t TunnelDataCmd = 1;
-const u_int8_t TunnelJoinGroupCmd = 2;
-const u_int8_t TunnelLeaveGroupCmd = 3;
-const u_int8_t TunnelTearDownCmd = 4;
-const u_int8_t TunnelProbeCmd = 5;
-const u_int8_t TunnelProbeAckCmd = 6;
-const u_int8_t TunnelProbeNackCmd = 7;
-const u_int8_t TunnelJoinRTPGroupCmd = 8;
-const u_int8_t TunnelLeaveRTPGroupCmd = 9;
+LIVE_API const u_int8_t TunnelDataCmd = 1;
+LIVE_API const u_int8_t TunnelJoinGroupCmd = 2;
+LIVE_API const u_int8_t TunnelLeaveGroupCmd = 3;
+LIVE_API const u_int8_t TunnelTearDownCmd = 4;
+LIVE_API const u_int8_t TunnelProbeCmd = 5;
+LIVE_API const u_int8_t TunnelProbeAckCmd = 6;
+LIVE_API const u_int8_t TunnelProbeNackCmd = 7;
+LIVE_API const u_int8_t TunnelJoinRTPGroupCmd = 8;
+LIVE_API const u_int8_t TunnelLeaveRTPGroupCmd = 9;
 // 0x0A through 0x10: currently unused.
-const u_int8_t TunnelExtensionFlag = 0x80; // a flag, not a cmd code
-const u_int8_t TunnelDataAuxCmd
+LIVE_API const u_int8_t TunnelExtensionFlag = 0x80; // a flag, not a cmd code
+LIVE_API const u_int8_t TunnelDataAuxCmd
     = (TunnelExtensionFlag|TunnelDataCmd);
-const u_int8_t TunnelJoinGroupAuxCmd
+LIVE_API const u_int8_t TunnelJoinGroupAuxCmd
     = (TunnelExtensionFlag|TunnelJoinGroupCmd);
-const u_int8_t TunnelLeaveGroupAuxCmd
+LIVE_API const u_int8_t TunnelLeaveGroupAuxCmd
     = (TunnelExtensionFlag|TunnelLeaveGroupCmd);
 // Note: the TearDown, Probe, ProbeAck, ProbeNack cmds have no Aux version
 // 0x84 through 0x87: currently unused.
-const u_int8_t TunnelJoinRTPGroupAuxCmd
+LIVE_API const u_int8_t TunnelJoinRTPGroupAuxCmd
     = (TunnelExtensionFlag|TunnelJoinRTPGroupCmd);
-const u_int8_t TunnelLeaveRTPGroupAuxCmd
+LIVE_API const u_int8_t TunnelLeaveRTPGroupAuxCmd
     = (TunnelExtensionFlag|TunnelLeaveRTPGroupCmd);
 // 0x8A through 0xFF: currently unused
 
-inline Boolean TunnelIsAuxCmd(u_int8_t cmd) {
+LIVE_API inline Boolean TunnelIsAuxCmd(u_int8_t cmd) {
   return (cmd&TunnelExtensionFlag) != 0;
 }
 

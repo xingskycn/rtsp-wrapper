@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _AC3_AUDIO_STREAM_FRAMER_HH
 #define _AC3_AUDIO_STREAM_FRAMER_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_FILTER_HH
 #include "FramedFilter.hh"
 #endif
 
-class AC3AudioStreamFramer: public FramedFilter {
+class LIVE_API AC3AudioStreamFramer: public FramedFilter {
 public:
   static AC3AudioStreamFramer*
   createNew(UsageEnvironment& env, FramedSource* inputSource,

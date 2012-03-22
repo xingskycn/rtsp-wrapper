@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _AMR_AUDIO_RTP_SINK_HH
 #define _AMR_AUDIO_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _AUDIO_RTP_SINK_HH
 #include "AudioRTPSink.hh"
 #endif
 
-class AMRAudioRTPSink: public AudioRTPSink {
+class LIVE_API AMRAudioRTPSink: public AudioRTPSink {
 public:
   static AMRAudioRTPSink* createNew(UsageEnvironment& env,
 				    Groupsock* RTPgs,

@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MP3_ADU_TRANSCODER_HH
 #define _MP3_ADU_TRANSCODER_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FRAMED_FILTER_HH
 #include "FramedFilter.hh"
 #endif
 
-class MP3ADUTranscoder: public FramedFilter {
+class LIVE_API MP3ADUTranscoder: public FramedFilter {
 public:
   static MP3ADUTranscoder* createNew(UsageEnvironment& env,
 				  unsigned outBitrate /* in kbps */,

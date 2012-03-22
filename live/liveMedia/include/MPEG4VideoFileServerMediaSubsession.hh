@@ -22,11 +22,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG4_VIDEO_FILE_SERVER_MEDIA_SUBSESSION_HH
 #define _MPEG4_VIDEO_FILE_SERVER_MEDIA_SUBSESSION_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _FILE_SERVER_MEDIA_SUBSESSION_HH
 #include "FileServerMediaSubsession.hh"
 #endif
 
-class MPEG4VideoFileServerMediaSubsession: public FileServerMediaSubsession{
+class LIVE_API MPEG4VideoFileServerMediaSubsession: public FileServerMediaSubsession{
 public:
   static MPEG4VideoFileServerMediaSubsession*
   createNew(UsageEnvironment& env, char const* fileName, Boolean reuseFirstSource);

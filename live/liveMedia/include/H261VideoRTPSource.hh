@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _H261_VIDEO_RTP_SOURCE_HH
 #define _H261_VIDEO_RTP_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MULTI_FRAMED_RTP_SOURCE_HH
 #include "MultiFramedRTPSource.hh"
 #endif
 
-class H261VideoRTPSource: public MultiFramedRTPSource {
+class LIVE_API H261VideoRTPSource: public MultiFramedRTPSource {
 public:
   static H261VideoRTPSource*
   createNew(UsageEnvironment& env, Groupsock* RTPgs,

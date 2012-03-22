@@ -21,64 +21,68 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _GROUPSOCK_HELPER_HH
 #define _GROUPSOCK_HELPER_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
+
 #ifndef _NET_ADDRESS_HH
 #include "NetAddress.hh"
 #endif
 
-int setupDatagramSocket(UsageEnvironment& env, Port port);
-int setupStreamSocket(UsageEnvironment& env,
+LIVE_API int setupDatagramSocket(UsageEnvironment& env, Port port);
+LIVE_API int setupStreamSocket(UsageEnvironment& env,
 		      Port port, Boolean makeNonBlocking = True);
 
-int readSocket(UsageEnvironment& env,
+LIVE_API int readSocket(UsageEnvironment& env,
 	       int socket, unsigned char* buffer, unsigned bufferSize,
 	       struct sockaddr_in& fromAddress);
 
-Boolean writeSocket(UsageEnvironment& env,
+LIVE_API Boolean writeSocket(UsageEnvironment& env,
 		    int socket, struct in_addr address, Port port,
 		    u_int8_t ttlArg,
 		    unsigned char* buffer, unsigned bufferSize);
 
-unsigned getSendBufferSize(UsageEnvironment& env, int socket);
-unsigned getReceiveBufferSize(UsageEnvironment& env, int socket);
-unsigned setSendBufferTo(UsageEnvironment& env,
+LIVE_API unsigned getSendBufferSize(UsageEnvironment& env, int socket);
+LIVE_API unsigned getReceiveBufferSize(UsageEnvironment& env, int socket);
+LIVE_API unsigned setSendBufferTo(UsageEnvironment& env,
 			 int socket, unsigned requestedSize);
-unsigned setReceiveBufferTo(UsageEnvironment& env,
+LIVE_API unsigned setReceiveBufferTo(UsageEnvironment& env,
 			    int socket, unsigned requestedSize);
-unsigned increaseSendBufferTo(UsageEnvironment& env,
+LIVE_API unsigned increaseSendBufferTo(UsageEnvironment& env,
 			      int socket, unsigned requestedSize);
-unsigned increaseReceiveBufferTo(UsageEnvironment& env,
+LIVE_API unsigned increaseReceiveBufferTo(UsageEnvironment& env,
 				 int socket, unsigned requestedSize);
 
-Boolean makeSocketNonBlocking(int sock);
-Boolean makeSocketBlocking(int sock);
+LIVE_API Boolean makeSocketNonBlocking(int sock);
+LIVE_API Boolean makeSocketBlocking(int sock);
 
-Boolean socketJoinGroup(UsageEnvironment& env, int socket,
+LIVE_API Boolean socketJoinGroup(UsageEnvironment& env, int socket,
 			netAddressBits groupAddress);
-Boolean socketLeaveGroup(UsageEnvironment&, int socket,
+LIVE_API Boolean socketLeaveGroup(UsageEnvironment&, int socket,
 			 netAddressBits groupAddress);
 
 // source-specific multicast join/leave
-Boolean socketJoinGroupSSM(UsageEnvironment& env, int socket,
+LIVE_API Boolean socketJoinGroupSSM(UsageEnvironment& env, int socket,
 			   netAddressBits groupAddress,
 			   netAddressBits sourceFilterAddr);
-Boolean socketLeaveGroupSSM(UsageEnvironment&, int socket,
+LIVE_API Boolean socketLeaveGroupSSM(UsageEnvironment&, int socket,
 			    netAddressBits groupAddress,
 			    netAddressBits sourceFilterAddr);
 
-Boolean getSourcePort(UsageEnvironment& env, int socket, Port& port);
+LIVE_API Boolean getSourcePort(UsageEnvironment& env, int socket, Port& port);
 
-netAddressBits ourIPAddress(UsageEnvironment& env); // in network order
+LIVE_API netAddressBits ourIPAddress(UsageEnvironment& env); // in network order
 
 // IP addresses of our sending and receiving interfaces.  (By default, these
 // are INADDR_ANY (i.e., 0), specifying the default interface.)
-extern netAddressBits SendingInterfaceAddr;
-extern netAddressBits ReceivingInterfaceAddr;
+extern LIVE_API netAddressBits SendingInterfaceAddr;
+extern LIVE_API netAddressBits ReceivingInterfaceAddr;
 
 // Allocates a randomly-chosen IPv4 SSM (multicast) address:
-netAddressBits chooseRandomIPv4SSMAddress(UsageEnvironment& env);
+LIVE_API netAddressBits chooseRandomIPv4SSMAddress(UsageEnvironment& env);
 
 // Returns a simple "hh:mm:ss" string, for use in debugging output (e.g.)
-char const* timestampString();
+LIVE_API char const* timestampString();
 
 
 #ifdef HAVE_SOCKADDR_LEN
@@ -102,7 +106,7 @@ char const* timestampString();
 //            NoReuse dummy;
 //            ...
 //          }
-class NoReuse {
+class LIVE_API NoReuse {
 public:
   NoReuse(UsageEnvironment& env);
   ~NoReuse();
@@ -124,7 +128,7 @@ void reclaimGroupsockPriv(UsageEnvironment& env);
 
 #if defined(__WIN32__) || defined(_WIN32)
 // For Windoze, we need to implement our own gettimeofday()
-extern int gettimeofday(struct timeval*, int*);
+extern LIVE_API int gettimeofday(struct timeval*, int*);
 #endif
 
 // The following are implemented in inet.c:

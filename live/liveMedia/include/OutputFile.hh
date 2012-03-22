@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _OUTPUT_FILE_HH
 #define _OUTPUT_FILE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #include <UsageEnvironment.hh>
 #include <stdio.h>
 
-FILE* OpenOutputFile(UsageEnvironment& env, char const* fileName);
+LIVE_API FILE* OpenOutputFile(UsageEnvironment& env, char const* fileName);
 
-void CloseOutputFile(FILE* fid);
+LIVE_API void CloseOutputFile(FILE* fid);
 
 #endif

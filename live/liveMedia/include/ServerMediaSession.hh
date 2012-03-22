@@ -24,6 +24,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _SERVER_MEDIA_SESSION_HH
 #define _SERVER_MEDIA_SESSION_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MEDIA_HH
 #include "Media.hh"
 #endif
@@ -37,9 +40,9 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "RTPInterface.hh" // for ServerRequestAlternativeByteHandler
 #endif
 
-class ServerMediaSubsession; // forward
+class LIVE_API ServerMediaSubsession; // forward
 
-class ServerMediaSession: public Medium {
+class LIVE_API ServerMediaSession: public Medium {
 public:
   static ServerMediaSession* createNew(UsageEnvironment& env,
 				       char const* streamName = NULL,
@@ -101,7 +104,7 @@ private:
 };
 
 
-class ServerMediaSubsessionIterator {
+class LIVE_API ServerMediaSubsessionIterator {
 public:
   ServerMediaSubsessionIterator(ServerMediaSession& session);
   virtual ~ServerMediaSubsessionIterator();
@@ -115,7 +118,7 @@ private:
 };
 
 
-class ServerMediaSubsession: public Medium {
+class LIVE_API ServerMediaSubsession: public Medium {
 public:
   virtual ~ServerMediaSubsession();
 

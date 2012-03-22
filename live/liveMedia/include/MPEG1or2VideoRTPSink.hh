@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MPEG_1OR2_VIDEO_RTP_SINK_HH
 #define _MPEG_1OR2_VIDEO_RTP_SINK_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _VIDEO_RTP_SINK_HH
 #include "VideoRTPSink.hh"
 #endif
 
-class MPEG1or2VideoRTPSink: public VideoRTPSink {
+class LIVE_API MPEG1or2VideoRTPSink: public VideoRTPSink {
 public:
   static MPEG1or2VideoRTPSink* createNew(UsageEnvironment& env, Groupsock* RTPgs);
 

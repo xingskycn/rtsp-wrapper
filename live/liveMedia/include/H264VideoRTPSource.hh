@@ -21,11 +21,14 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #ifndef _H264_VIDEO_RTP_SOURCE_HH
 #define _H264_VIDEO_RTP_SOURCE_HH
 
+#ifndef _LIVE_GLOBALS_HH
+#include "LiveGlobals.hh"
+#endif
 #ifndef _MULTI_FRAMED_RTP_SOURCE_HH
 #include "MultiFramedRTPSource.hh"
 #endif
 
-class H264VideoRTPSource: public MultiFramedRTPSource {
+class LIVE_API H264VideoRTPSource: public MultiFramedRTPSource {
 public:
   static H264VideoRTPSource*
   createNew(UsageEnvironment& env, Groupsock* RTPgs,
@@ -51,7 +54,7 @@ private:
   unsigned char fCurPacketNALUnitType;
 };
 
-class SPropRecord {
+class LIVE_API SPropRecord {
 public:
   ~SPropRecord() { delete[] sPropBytes; }
 
