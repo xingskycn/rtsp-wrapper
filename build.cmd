@@ -16,7 +16,8 @@ IF "%VCINSTALLDIR%" == "" (
 )
 
 
+del /s/q/f generated > NUL 2>&1
 
 "%GCCXML%" -fxml=RTSPClient.xml -Ilive\UsageEnvironment\include -Ilive\groupsock\include live\liveMedia\include\RTSPClient.hh
 
-..\cxxi\bin\Debug\generator.exe -o=generated -ns=Tests -lib=libtest -inline=present -abi=msvc RTSPClient.xml
+..\cxxi\bin\Debug\generator.exe --filters=filters.xml -o=generated -ns=Tests -lib=libtest -inline=present -abi=msvc RTSPClient.xml
