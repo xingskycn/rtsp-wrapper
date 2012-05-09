@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C4F12856-2F20-41E0-917C-680454F12FD6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Live555Rtsp</RootNamespace>
+    <AssemblyName>RtspWrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generated\AddressPortLookupTable.cs" />
+    <Compile Include="Generated\Authenticator.cs" />
+    <Compile Include="Generated\AuxHandlerFunc.cs" />
+    <Compile Include="Generated\BasicTaskScheduler.cs" />
+    <Compile Include="Generated\BasicTaskScheduler0.cs" />
+    <Compile Include="Generated\BasicUsageEnvironment.cs" />
+    <Compile Include="Generated\BasicUsageEnvironment0.cs" />
+    <Compile Include="Generated\destRecord.cs" />
+    <Compile Include="Generated\DirectedNetInterface.cs" />
+    <Compile Include="Generated\DirectedNetInterfaceSet.cs" />
+    <Compile Include="Generated\FramedFilter.cs" />
+    <Compile Include="Generated\FramedSource.cs" />
+    <Compile Include="Generated\GroupEId.cs" />
+    <Compile Include="Generated\Groupsock.cs" />
+    <Compile Include="Generated\HashTable.cs" />
+    <Compile Include="Generated\in_addr.cs" />
+    <Compile Include="Generated\Libs.cs" />
+    <Compile Include="Generated\MediaSession.cs" />
+    <Compile Include="Generated\MediaSink.cs" />
+    <Compile Include="Generated\MediaSource.cs" />
+    <Compile Include="Generated\MediaSubsession.cs" />
+    <Compile Include="Generated\MediaSubsessionIterator.cs" />
+    <Compile Include="Generated\Medium.cs" />
+    <Compile Include="Generated\NetAddress.cs" />
+    <Compile Include="Generated\NetInterface.cs" />
+    <Compile Include="Generated\NetInterfaceTrafficStats.cs" />
+    <Compile Include="Generated\OutPacketBuffer.cs" />
+    <Compile Include="Generated\OutputSocket.cs" />
+    <Compile Include="Generated\Port.cs" />
+    <Compile Include="Generated\RTCPInstance.cs" />
+    <Compile Include="Generated\RTPInterface.cs" />
+    <Compile Include="Generated\RTPReceptionStats.cs" />
+    <Compile Include="Generated\RTPReceptionStatsDB.cs" />
+    <Compile Include="Generated\RTPSink.cs" />
+    <Compile Include="Generated\RTPSource.cs" />
+    <Compile Include="Generated\RTPTransmissionStats.cs" />
+    <Compile Include="Generated\RTPTransmissionStatsDB.cs" />
+    <Compile Include="Generated\RTSPClient.cs" />
+    <Compile Include="Generated\Scope.cs" />
+    <Compile Include="Generated\SDESItem.cs" />
+    <Compile Include="Generated\ServerRequestAlternativeByteHandler.cs" />
+    <Compile Include="Generated\sockaddr_in.cs" />
+    <Compile Include="Generated\Socket.cs" />
+    <Compile Include="Generated\TaskScheduler.cs" />
+    <Compile Include="Generated\tcpStreamRecord.cs" />
+    <Compile Include="Generated\timeval.cs" />
+    <Compile Include="Generated\UsageEnvironment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="filters.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="includes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\cxxi\src\Mono.Cxxi\Mono.Cxxi.csproj">
+      <Project>{4A864586-93C5-4DC1-8A80-F094A88506D7}</Project>
+      <Name>Mono.Cxxi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
